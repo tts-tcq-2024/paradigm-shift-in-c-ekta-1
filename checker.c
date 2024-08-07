@@ -4,11 +4,11 @@
 
 // Function to check if a parameter is within the acceptable range
 int Range_check(float value, float min_value, float max_value, const char* paramName) {
-    int isOk = (value >= min_value && value <= max_value);
-    if (!isOk) {
+    int Check = (value >= min_value && value <= max_value);
+    if (!Check) {
         printf("%s is out of range (Value: %.2f)\n", paramName, value);
     }
-    return isOk;
+    return Check;
 }
 
 // Function to check battery parameters
