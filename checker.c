@@ -20,7 +20,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
 {
     return (Range_check(temperature, 0, 45, "Temperature") &&
             Range_check(soc, 20, 80, "State of Charge") &&
-            Range_check(chargerate, 0, 0.8, "Charge rate"));
+            Range_check(chargeRate, 0, 0.8, "Charge rate"));
 }
 
 
