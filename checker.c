@@ -26,11 +26,8 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
 
 
 int main() {
-    // Test case 1: All parameters are within acceptable ranges
-    assert(batteryIsOk(25, 70, 0.7) == 1);
-
-    // Test case 2: Temperature and SOC are out of range
-    assert(batteryIsOk(50, 85, 0) == 0);
-
-    return 0;
+  assert(batteryIsOk(25, 70, 0.7));
+  assert(!batteryIsOk(50, 85, 0));
 }
+
+
