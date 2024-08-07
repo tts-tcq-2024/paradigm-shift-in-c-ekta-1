@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <assert.h>
 
-// Function to check if battery parameters are within acceptable ranges
 
 // Function to check battery parameters
-int batteryIsOk(float temperature, float soc, float chargeRate) {
+   int batteryIsOk(float temperature, float soc, float chargeRate) {
     int isTemperatureOk = (temperature >= 0 && temperature <= 45);
     int isSocOk = (soc >= 20 && soc <= 80);
     int isChargeRateOk = (chargeRate >= 0 && chargeRate <= 0.8);
