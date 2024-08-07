@@ -2,24 +2,22 @@
 #include <assert.h>
 
 
-// Function to check battery parameters
-   int batteryIsOk(float temperature, float soc, float chargeRate)
-{
-    int isTemperatureOk = (temperature >= 0 && temperature <= 45);
-    int isSocOk = (soc >= 20 && soc <= 80);
-    int isChargeRateOk = (chargeRate >= 0 && chargeRate <= 0.8);
+// Function to check if a parameter is within the acceptable range
+int Range_check(float value, float min_value, float max_value, const char* paramName) {
+    int isOk = (value >= min_value && value <= max_value);
+    if (!isOk) {
+        printf("%s is out of range (Value: %.2f)\n", paramName, value);
+    }
+    return isOk;
+}
 
-    // Output error messages based on which conditions are not met
-    if (!isTemperatureOk) {
-        printf("Temperature out of range! (Value: %.2f)\n", temperature);
-    }
-    if (!isSocOk) {
-        printf("State of Charge out of range! (Value: %.2f)\n", soc);
-    }
-    if (!isChargeRateOk) {
-        printf("Charge Rate out of range! (Value: %.2f)\n", chargeRate);
-    }
-    return isTemperatureOk && isSocOk && isChargeRateOk;
+// Function to check battery parameters
+int batteryIsOk(float temperature, float soc, float chargeRate) {
+    int tempOk = Range_check(temperature, 0, 45, "Temperature");
+    int socOk = Range_check(soc, 20, 80, "State of Charge");
+    int chargeRateOk = Range_check(chargeRate, 0, 0.8, "Charge Rate");
+
+    return tempOk && socOk && chargeRateOk;
 }
 
 
