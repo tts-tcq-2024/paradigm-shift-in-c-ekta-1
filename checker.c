@@ -3,14 +3,14 @@
 
 // Function to check if battery parameters are within acceptable ranges
 
-int Range_check(float Value,float max_value,float min_value, const char* error_message) 
+int Range_check(float Value,float max_value,float min_value, const char* Error_Log) 
 {
 int isOk = 1; // Assume everything is ok initially
     
     // Combine all conditions into a single logical expression
     if (Value < min_value || Value > max_value)
     {
-        printf("%s is out of range\n", error_message);
+        printf("%s is out of range\n", Error_Log);
         return 0;
     }
    return isOk;
