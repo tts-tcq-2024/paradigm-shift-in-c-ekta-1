@@ -3,17 +3,18 @@
 
 // Function to check if battery parameters are within acceptable ranges
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-    int isOk = 1; // Assume everything is ok initially  
-    if (temperature < 0 || temperature > 45) {
-        printf("Temperature out of range!\n");
-        isOk = 0;
-    }
-    if (soc < 20 || soc > 80) {
-        printf("State of Charge out of range!\n");
-        isOk = 0;
-    }
-    if (chargeRate > 0.8) {
-        printf("Charge Rate out of range!\n");
+    int isOk = 1; // Assume everything is ok initially
+    // Combine all conditions into a single logical expression
+    if (temperature < 0 || temperature > 45 || soc < 20 || soc > 80 || chargeRate > 0.8) {
+        if (temperature < 0 || temperature > 45) {
+            printf("Temperature out of range!\n");
+        }
+        if (soc < 20 || soc > 80) {
+            printf("State of Charge out of range!\n");
+        }
+        if (chargeRate > 0.8) {
+            printf("Charge Rate out of range!\n");
+        }
         isOk = 0;
     }
 
