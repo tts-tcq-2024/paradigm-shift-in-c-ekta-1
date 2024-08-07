@@ -11,12 +11,12 @@ int check_range(float value, float min_value, float max_value, const char* error
     return 1;
 }
  
-int battery_is_ok(float temperature, float soc, float charge_rate)
+/*int battery_is_ok(float temperature, float soc, float charge_rate)
 {
     return (check_range(temperature, 0, 45, "Temperature") &&
             check_range(soc, 20, 80, "State of Charge") &&
             check_range(charge_rate, 0, 0.8, "Charge rate"));
-}
+}*/
 
 int main() 
 {
