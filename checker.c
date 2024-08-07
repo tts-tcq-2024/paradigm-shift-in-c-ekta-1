@@ -3,7 +3,7 @@
 
 // Function to check if battery parameters are within acceptable ranges
 
-int batteryIsOk(float max_value,float min_value const char* error_message) 
+int batteryIsOk(float max_value,float min_value, const char* error_message) 
 {
 int isOk = 1; // Assume everything is ok initially
     
