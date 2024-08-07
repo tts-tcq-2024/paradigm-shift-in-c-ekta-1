@@ -3,7 +3,8 @@
 
 
 // Function to check battery parameters
-   int batteryIsOk(float temperature, float soc, float chargeRate) {
+   int batteryIsOk(float temperature, float soc, float chargeRate)
+{
     int isTemperatureOk = (temperature >= 0 && temperature <= 45);
     int isSocOk = (soc >= 20 && soc <= 80);
     int isChargeRateOk = (chargeRate >= 0 && chargeRate <= 0.8);
@@ -18,8 +19,6 @@
     if (!isChargeRateOk) {
         printf("Charge Rate out of range! (Value: %.2f)\n", chargeRate);
     }
-
-    // Return 1 if all conditions are met, 0 otherwise
     return isTemperatureOk && isSocOk && isChargeRateOk;
 }
 
